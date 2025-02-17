@@ -1,0 +1,118 @@
+$primary-green-500: hsl(158, 36%, 37%);
+$primary-green-700: hsl(158, 42%, 18%);
+
+$neutral-black: hsl(212, 21%, 14%);
+$neutral-grey: hsl(228, 12%, 48%);
+$neutral-cream: hsl(30, 38%, 92%);
+
+$font-size: 0.875rem;
+
+$ff-montserrat: "Montserrat";
+$fw-montserrat-500: 500;
+$fw-montserrat-700: 700;
+
+$ff-fraunces: "Fraunces";
+$fw-fraunces-700: 700;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $neutral-cream;
+    font-family: $ff-montserrat;
+    color: $neutral-grey;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: 10px;
+    max-inline-size: 360px;
+    font-size: 1rem;
+    margin: 2rem;
+
+    @media (width > 680px) {
+        max-inline-size: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: .875rem;
+    }
+}
+
+.product-img {
+    img {
+        display: block;
+        max-inline-size: 100%;
+        border-radius: 10px 10px 0 0;
+
+        @media (width > 680px) {
+            inline-size: 100%;
+            block-size: 100%;
+            border-radius: 10px 0 0 10px;
+        }
+    }
+}
+
+.primary-content {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+
+    .category {
+        letter-spacing: .2rem;
+    }
+
+    .product-header {
+        font-family: $ff-fraunces;
+        font-size: 2rem;
+        color: $neutral-black;
+        line-height: 100%;
+    }
+
+    .description {
+        line-height: 150%;
+    }
+
+    .price-tag {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .discounted-price {
+            color: $primary-green-500;
+            font-family: $ff-fraunces;
+            font-weight: $fw-fraunces-700;
+            font-size: 2rem;
+        }
+
+        .original-price {
+            color: $neutral-grey;
+            font-size: .875rem;
+            font-weight: $fw-montserrat-500;
+            text-decoration: line-through;
+        }
+    }
+
+    .cart-btn {
+        padding: 1rem;
+        display: flex;
+        gap: .75rem;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary-green-500;
+        color: white;
+        font-weight: $fw-montserrat-700;
+        border-radius: 10px;
+        border: none;
+
+        &:hover {
+            background-color: $primary-green-700;
+        }
+    }
+
+}
