@@ -1,0 +1,108 @@
+.content-box .payment-btn {
+  font-weight: 900;
+  border-radius: 10px;
+  padding: 1rem;
+  inline-size: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  background-color: hsl(225, 100%, 94%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  background-color: white;
+  max-inline-size: 375px;
+  font-size: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px hsla(245, 75%, 52%, 0.15);
+}
+.wrapper .illustration-hero {
+  display: block;
+  max-inline-size: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.content-box {
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.content-box .main-header {
+  font-weight: 900;
+  color: hsl(223, 47%, 23%);
+}
+.content-box .description {
+  text-align: center;
+  color: hsl(224, 23%, 55%);
+  line-height: 1.5;
+  font-weight: 500;
+  max-inline-size: 90%;
+}
+.content-box .subscription-plan {
+  background-color: hsl(225, 100%, 98%);
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inline-size: 100%;
+}
+.content-box .subscription-plan img {
+  width: 40px;
+  height: 40px;
+}
+.content-box .subscription-plan p {
+  color: hsl(223, 47%, 23%);
+  font-weight: 900;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+.content-box .subscription-plan span {
+  display: block;
+  color: hsl(224, 23%, 55%);
+  font-weight: 700;
+}
+.content-box .subscription-plan .change-btn {
+  color: hsl(245, 75%, 52%);
+  font-weight: 900;
+}
+.content-box .subscription-plan .change-btn:hover {
+  color: hsl(245, 83%, 68%);
+  text-decoration: none;
+}
+.content-box .payment-btn {
+  background-color: hsl(245, 75%, 52%);
+  color: white;
+  box-shadow: 0 10px 20px hsla(245, 75%, 52%, 0.3);
+}
+.content-box .payment-btn:hover {
+  background-color: hsl(245, 83%, 68%);
+}
+.content-box .cancel-btn {
+  color: hsl(224, 23%, 55%);
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+}
+.content-box .cancel-btn:hover {
+  color: hsl(223, 47%, 23%);
+}/*# sourceMappingURL=style.css.map */

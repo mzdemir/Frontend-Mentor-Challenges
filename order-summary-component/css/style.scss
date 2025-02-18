@@ -1,0 +1,141 @@
+// 🔹 Color Variables
+$pr-pale-blue: hsl(225, 100%, 94%);
+$pr-bright-blue: hsl(245, 75%, 52%);
+$n-very-pale-blue: hsl(225, 100%, 98%);
+$n-desaturated-blue: hsl(224, 23%, 55%);
+$n-dark-blue: hsl(223, 47%, 23%);
+$hover-clr: hsl(245, 83%, 68%);
+
+// 🔹 Font Weight Variables
+$fw-500: 500;
+$fw-700: 700;
+$fw-900: 900;
+
+// 🔹 Mixin for Box Shadows
+@mixin box-shadow($color, $opacity) {
+    box-shadow: 0 10px 20px hsla(hue($color), saturation($color), lightness($color), $opacity);
+}
+
+// 🔹 Base Button Styles (Extensible)
+%btn-base {
+    font-weight: $fw-900;
+    border-radius: 10px;
+    padding: 1rem;
+    inline-size: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Red Hat Display", sans-serif;
+    background-color: $pr-pale-blue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.5rem;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: white;
+    max-inline-size: 375px;
+    font-size: 1rem;
+    display: grid;
+    gap: .5rem;
+    border-radius: 20px;
+    @include box-shadow($pr-bright-blue, 0.15);
+
+    .illustration-hero {
+        display: block;
+        max-inline-size: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+.content-box {
+    display: grid;
+    place-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+
+    .main-header {
+        font-weight: $fw-900;
+        color: $n-dark-blue;
+    }
+
+    .description {
+        text-align: center;
+        color: $n-desaturated-blue;
+        line-height: 1.5;
+        font-weight: $fw-500;
+        max-inline-size: 90%;
+    }
+
+    .subscription-plan {
+        background-color: $n-very-pale-blue;
+        padding: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        inline-size: 100%;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        p {
+            color: $n-dark-blue;
+            font-weight: $fw-900;
+            line-height: 1.5;
+            flex-grow: 1;
+            margin: 0 1rem;
+        }
+
+        span {
+            display: block;
+            color: $n-desaturated-blue;
+            font-weight: $fw-700;
+        }
+
+        .change-btn {
+            color: $pr-bright-blue;
+            font-weight: $fw-900;
+
+            &:hover {
+                color: $hover-clr;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .payment-btn {
+        @extend %btn-base;
+        background-color: $pr-bright-blue;
+        color: white;
+        @include box-shadow($pr-bright-blue, 0.3);
+
+        &:hover {
+            background-color: $hover-clr;
+        }
+    }
+
+    .cancel-btn {
+        color: $n-desaturated-blue;
+        font-weight: $fw-900;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            color: $n-dark-blue;
+        }
+    }
+}

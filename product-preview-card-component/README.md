@@ -22,7 +22,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/product-card-component-using-sass-and-css-grid-cHgY6MtPCc
-- Live Site URL: https://product-preview-card-component.netlify.app/
+- Live Site URL: https://mzdemir-product-card-component.netlify.app/
 
 ### Built with
 
