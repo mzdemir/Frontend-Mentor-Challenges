@@ -1,0 +1,193 @@
+$pr-colors: (
+    light-red: hsl(0, 100%, 67%),
+    orangey-yellow: hsl(39, 100%, 56%),
+    green-teal: hsl(166, 100%, 37%),
+    cobalt-blue: hsl(234, 85%, 45%)
+);
+
+$gr-colors: (
+    light-slate-blue: hsl(252, 100%, 67%),
+    light-royal-blue: hsl(241, 81%, 54%),
+    violet-blue: hsla(256, 72%, 46%, 1),
+    persian-blue: hsla(241, 72%, 46%, 0)
+);
+
+$n-colors: (
+    pale-blue: hsl(221, 100%, 96%),
+    light-lavender: hsl(241, 100%, 89%),
+    dark-gray-blue: hsl(224, 30%, 27%)
+);
+
+$fs-18: 1.125rem;
+$fw-medium: 500;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+
+@mixin li-item-bg-clr($color, $opacity) {
+    background-color: hsla(hue($color), saturation($color), lightness($color), $opacity);
+}
+
+%li-base {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-size: .875rem;
+
+    img {
+        padding-inline-end: .5rem;
+    }
+
+    .category {
+        font-weight: $fw-extra-bold;
+    }
+
+    .score-value {
+        color: map-get($n-colors, dark-gray-blue);
+        margin-left: auto;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hanken Grotesk";
+    font-size: $fs-18;
+    display: grid;
+    place-items: center;
+    min-block-size: 100vh;
+    background-color: map-get($n-colors, pale-blue);
+}
+
+.wrapper {
+    background-color: white;
+
+    @media (width > 500px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-inline-size: 735px;
+        background-color: white;
+        border-radius: 2rem;
+    }
+
+    .result-container {
+        background: linear-gradient(to bottom,
+                map-get($gr-colors, light-slate-blue),
+                map-get($gr-colors, light-royal-blue));
+        display: grid;
+        place-items: center;
+        padding: 1.75rem 3.75rem 2.5rem;
+        gap: 1.75rem;
+        border-radius: 0 0 2rem 2rem;
+
+        @media (width > 500px) {
+            border-radius: 2rem;
+        }
+
+        .section-title {
+            color: map-get($n-colors, light-lavender);
+        }
+
+        .score-circle {
+            background: linear-gradient(to bottom,
+                    map-get($gr-colors, violet-blue),
+                    map-get($gr-colors, persian-blue));
+            color: white;
+            inline-size: 140px;
+            block-size: 140px;
+            font-size: 3rem;
+            font-weight: $fw-bold;
+            display: grid;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 50%;
+
+            span {
+                color: map-get($gr-colors, light-slate-blue);
+                font-size: .875rem;
+            }
+        }
+
+        .score-rating {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: $fw-bold;
+            display: grid;
+            text-align: center;
+            gap: .5rem;
+
+            span {
+                color: map-get($n-colors, light-lavender);
+                font-size: 1rem;
+                font-weight: $fw-medium;
+
+
+                @media (width > 500px) {
+                    font-size: $fs-18;
+                }
+
+            }
+        }
+    }
+
+    .summary-container {
+        padding: 1.5rem;
+        border-radius: 0 30px 30px 0;
+
+        @media (width > 500px) {
+            border-radius: 2rem;
+            padding: 2.75rem 2.5rem;
+        }
+
+        .section-title {
+            color: map-get($n-colors, dark-gray-blue);
+            padding-bottom: 1.5rem;
+        }
+
+        .score-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+
+            $i: 1;
+
+            @each $key, $color in $pr-colors {
+                li:nth-child(#{$i}) {
+                    @extend %li-base;
+                    @include li-item-bg-clr($color, .1);
+
+                    .category {
+                        color: $color;
+                    }
+                }
+
+                $i: $i + 1;
+            }
+        }
+
+        .continue-btn {
+            inline-size: 100%;
+            margin-block-start: 1.5rem;
+            background-color: map-get($n-colors, dark-gray-blue);
+            color: white;
+            font-size: 1rem;
+            font-weight: $fw-bold;
+            padding: 1rem;
+            border: none;
+            border-radius: 20px;
+            font-family: inherit;
+
+            &:hover,
+            &:focus-visible {
+                cursor: pointer;
+                background: linear-gradient(to bottom,
+                        map-get($gr-colors, light-slate-blue),
+                        map-get($gr-colors, light-royal-blue));
+            }
+        }
+    }
+}

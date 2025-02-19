@@ -1,0 +1,154 @@
+.wrapper .summary-container .score-list li:nth-child(4), .wrapper .summary-container .score-list li:nth-child(3), .wrapper .summary-container .score-list li:nth-child(2), .wrapper .summary-container .score-list li:nth-child(1) {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.875rem;
+}
+.wrapper .summary-container .score-list li:nth-child(4) img, .wrapper .summary-container .score-list li:nth-child(3) img, .wrapper .summary-container .score-list li:nth-child(2) img, .wrapper .summary-container .score-list li:nth-child(1) img {
+  padding-inline-end: 0.5rem;
+}
+.wrapper .summary-container .score-list li:nth-child(4) .category, .wrapper .summary-container .score-list li:nth-child(3) .category, .wrapper .summary-container .score-list li:nth-child(2) .category, .wrapper .summary-container .score-list li:nth-child(1) .category {
+  font-weight: 800;
+}
+.wrapper .summary-container .score-list li:nth-child(4) .score-value, .wrapper .summary-container .score-list li:nth-child(3) .score-value, .wrapper .summary-container .score-list li:nth-child(2) .score-value, .wrapper .summary-container .score-list li:nth-child(1) .score-value {
+  color: hsl(224, 30%, 27%);
+  margin-left: auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hanken Grotesk";
+  font-size: 1.125rem;
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+  background-color: hsl(221, 100%, 96%);
+}
+
+.wrapper {
+  background-color: white;
+}
+@media (width > 500px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-inline-size: 735px;
+    background-color: white;
+    border-radius: 2rem;
+  }
+}
+.wrapper .result-container {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  display: grid;
+  place-items: center;
+  padding: 1.75rem 3.75rem 2.5rem;
+  gap: 1.75rem;
+  border-radius: 0 0 2rem 2rem;
+}
+@media (width > 500px) {
+  .wrapper .result-container {
+    border-radius: 2rem;
+  }
+}
+.wrapper .result-container .section-title {
+  color: hsl(241, 100%, 89%);
+}
+.wrapper .result-container .score-circle {
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  color: white;
+  inline-size: 140px;
+  block-size: 140px;
+  font-size: 3rem;
+  font-weight: 700;
+  display: grid;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+.wrapper .result-container .score-circle span {
+  color: hsl(252, 100%, 67%);
+  font-size: 0.875rem;
+}
+.wrapper .result-container .score-rating {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: grid;
+  text-align: center;
+  gap: 0.5rem;
+}
+.wrapper .result-container .score-rating span {
+  color: hsl(241, 100%, 89%);
+  font-size: 1rem;
+  font-weight: 500;
+}
+@media (width > 500px) {
+  .wrapper .result-container .score-rating span {
+    font-size: 1.125rem;
+  }
+}
+.wrapper .summary-container {
+  padding: 1.5rem;
+  border-radius: 0 30px 30px 0;
+}
+@media (width > 500px) {
+  .wrapper .summary-container {
+    border-radius: 2rem;
+    padding: 2.75rem 2.5rem;
+  }
+}
+.wrapper .summary-container .section-title {
+  color: hsl(224, 30%, 27%);
+  padding-bottom: 1.5rem;
+}
+.wrapper .summary-container .score-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+.wrapper .summary-container .score-list li:nth-child(1) {
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+.wrapper .summary-container .score-list li:nth-child(1) .category {
+  color: hsl(0, 100%, 67%);
+}
+.wrapper .summary-container .score-list li:nth-child(2) {
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+.wrapper .summary-container .score-list li:nth-child(2) .category {
+  color: hsl(39, 100%, 56%);
+}
+.wrapper .summary-container .score-list li:nth-child(3) {
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+.wrapper .summary-container .score-list li:nth-child(3) .category {
+  color: hsl(166, 100%, 37%);
+}
+.wrapper .summary-container .score-list li:nth-child(4) {
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+.wrapper .summary-container .score-list li:nth-child(4) .category {
+  color: hsl(234, 85%, 45%);
+}
+.wrapper .summary-container .continue-btn {
+  inline-size: 100%;
+  margin-block-start: 1.5rem;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-family: inherit;
+}
+.wrapper .summary-container .continue-btn:hover, .wrapper .summary-container .continue-btn:focus-visible {
+  cursor: pointer;
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}/*# sourceMappingURL=style.css.map */

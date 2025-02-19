@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Frontend Mentor | Results summary component</title>
+</head>
+<body>
+	<main class="wrapper">
+		<section class="result-container" aria-labelledby="result-heading">
+			<h1 class="section-title">Your Result</h1>
+			<p class="score-circle">
+				76 <span> of 100</span></p>
+			<p class="score-rating">Great<span>
+				You scored higher than 65% of the 
+				people who have taken these tests.
+			</span></p>
+		</section>
+
+		<section class="summary-container" aria-labelledby="summary-heading">
+			<h1 class="section-title">Summary</h1>
+				<ul class="score-list">
+					<li>
+						<img src="./images/icon-reaction.svg" alt="">
+						<span class="category">Reaction</span>
+						<span class="score-value"><strong>80</strong> / 100</span>
+					</li>
+					<li>
+						<img src="./images/icon-memory.svg" alt="">
+						<span class="category">Memory</span>
+						<span class="score-value"><strong>92</strong> / 100</span>
+					</li>
+					<li>
+						<img src="./images/icon-verbal.svg" alt="">
+						<span class="category">Verbal</span>
+						<span class="score-value"><strong>61</strong> / 100</span>
+					</li>
+					<li>
+						<img src="./images/icon-visual.svg" alt="">
+						<span class="category">Visual</span>
+						<span class="score-value"><strong>73</strong> / 100</span>
+					</li>
+				</ul>
+		
+				<button class="continue-btn" type="button">Continue</button>
+		</section>
+	</main>
+</body>
+</html>
