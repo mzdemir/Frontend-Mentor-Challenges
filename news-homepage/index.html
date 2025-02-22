@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<title>Frontend Mentor | News homepage</title>
+</head>
+<body>
+	<header class="primary-header">
+		<img class="logo" src="./images/logo.svg" alt="News Homepage Logo">
+		<button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+			<span class="sr-only">Menu</span>
+			<img src="./images/icon-menu.svg" alt="Open navigation menu">
+		</button>
+		<nav aria-label="Primary Navigation">
+			<ul id="primary-nav" class="primary-nav" data-visible="false">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">New</a></li>
+				<li><a href="#">Popular</a></li>
+				<li><a href="#">Trending</a></li>
+				<li><a href="#">Categories</a></li>
+			</ul>
+		</nav>
+		<div class="overlay" data-visible="false"></div>
+	</header>
+
+	<main class="main-container">
+		<figure class="image-container">
+			<picture>
+				<source srcset="./images/image-web-3-mobile.jpg" media="(max-width: 680px)">
+				<img class="main-image" 
+					src="./images/image-web-3-desktop.jpg" 
+					alt="Abstract colorful 3D shapes">
+			</picture>
+		</figure>
+
+    
+    <h1 class="headline">The Bright Future of Web 3.0?</h1>
+    
+    <div class="content">
+      <p class="description">
+        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people.
+        But is it really fulfilling its promise?</p>
+      <button class="read-more">READ MORE</button>
+    </div>
+	
+		<section class="side-new-section">
+			<h2 class="new-title">New</h2>
+			<div class="side-new-item">
+				<h3><a href="">Hydrogen VS Electric Cars</a></h3>
+				<p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+			</div>
+			<div class="side-new-item">
+				<h3><a href="">The Downsides of AI Artistry</a></h3>
+				<p>What are the possible adverse effects of 
+					on-demand AI image generation?</p>
+			</div>
+			<div class="side-new-item">
+				<h3><a href="">Is VC Funding Drying Up?</a></h3>
+				<p>Private funding by VC firms is down 50% YOY. 
+					We take a look at what that means.</p>
+			</div>
+		</section>
+	</main>
+
+	<section class="trending">
+		<article class="trending-item">
+			<img src="./images/image-retro-pcs.jpg" alt="a retro pc">
+			<div class="trending-text">
+				<span class="trending-number">01</span>
+				<h3><a href="">Reviving Retro PCs</a></h3>
+				<p>What happens when old PCs are given modern upgrades?</p>
+			</div>
+			
+		</article>
+	
+		<article class="trending-item">
+			<img src="./images/image-top-laptops.jpg" alt="laptop keyboard">
+			<div class="trending-text">
+				<span class="trending-number">02</span>
+				<h3><a href="">Top 10 Laptops of 2022</a></h3>
+				<p>Our best picks for various needs and budgets.</p>
+			</div>
+		</article>
+	
+		<article class="trending-item">
+			<img src="./images/image-gaming-growth.jpg" alt="a gamepad">
+			<div class="trending-text">
+				<span class="trending-number">03</span>
+				<h3><a href="">The Growth of Gaming</a></h3>
+				<p>How the pandemic has sparked fresh opportunities.</p>
+			</div>
+		</article>
+	</section>
+
+	<script>
+		const primaryNav = document.querySelector(".primary-nav")
+		const navToggle = document.querySelector(".mobile-nav-toggle")
+		const navIcon = navToggle.querySelector("img")
+		const overlay = document.querySelector(".overlay") // Select overlay
+
+
+		const menuIconSrc = "./images/icon-menu.svg"
+		const closeIconSrc = "./images/icon-menu-close.svg"
+		
+		navToggle.addEventListener("click", () => {
+			const isVisible = primaryNav.getAttribute("data-visible") === "false"
+			
+			primaryNav.setAttribute("data-visible", isVisible ? "true" : "false")
+			navToggle.setAttribute("aria-expanded", isVisible ? "true" : "false");
+
+			navIcon.src = isVisible ? closeIconSrc : menuIconSrc;
+			overlay.setAttribute("data-visible", isVisible ? "true" : "false")
+		})
+	</script>
+</body>
+</html>
