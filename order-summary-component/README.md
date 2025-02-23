@@ -14,7 +14,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/order-summary-component-with-sass-TVzwVR0Keu
 - Live Site URL: https://mzdemir-order-summary-component.netlify.app/
 
 ### Built with

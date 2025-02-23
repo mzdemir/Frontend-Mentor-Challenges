@@ -1,0 +1,119 @@
+$primary: (
+    purple-50: hsl(260, 100%, 95%),
+    purple-300: hsl(264, 82%, 80%),
+    purple-500: hsl(263, 55%, 52%)
+);
+
+$neutral: (
+    grey-100: hsl(214, 17%, 92%),
+    grey-200: hsl(0, 0%, 81%),
+    grey-400: hsl(224, 10%, 45%),
+    grey-500: hsl(217, 19%, 35%),
+    dark-blue: hsl(219, 29%, 14%),
+    black: hsl(0, 0%, 7%)
+);
+
+@mixin testimonials($index, $bg-color, $text-color, $grid-area) {
+    &:nth-child(#{$index}) {
+        background-color: $bg-color;
+        color: $text-color;
+        grid-area: $grid-area;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Barlow Semi Condensed";
+    color: white;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: map-get($neutral, grey-100);
+}
+
+.testimonial-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    margin: 1rem;
+    inline-size: min(95%, 70rem);
+    grid-template-areas:
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+
+    @media (min-width: 33em) {
+        grid-template-areas:
+            "one one"
+            "two three"
+            "four four"
+            "five five";
+    }
+
+    @media (min-width: 54em) {
+        grid-template-areas:
+            "one four"
+            "two five"
+            "three five";
+    }
+
+    @media (min-width: 75em) {
+        grid-template-areas:
+            "one one two five"
+            "three four four five";
+    }
+}
+
+.testimonial {
+    display: grid;
+    gap: 1rem;
+    font-size: 13px;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(217, 19%, 35% / 0.25);
+
+    .profile {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        img {
+            display: block;
+            width: 1.75rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid map-get($primary, purple-300);
+        }
+
+        .name {
+            font-size: 13px;
+        }
+
+        .title {
+            font-size: 13px;
+        }
+    }
+
+    @include testimonials(1, map-get($primary, purple-500), white, one);
+    @include testimonials(2, map-get($neutral, grey-500), white, two);
+    @include testimonials(3, white, map-get($neutral, grey-500), three);
+    @include testimonials(4, map-get($neutral, dark-blue), white, four);
+    @include testimonials(5, white, map-get($neutral, grey-500), five);
+
+    p:first-of-type {
+        font-size: 1.3rem;
+        line-height: 1.2;
+    }
+
+    p:last-of-type {
+        opacity: 0.8;
+        line-height: 1.3;
+    }
+}

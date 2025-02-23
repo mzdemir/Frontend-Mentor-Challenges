@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/results-summary-component-with-sass-4F7u6xebVQ
 - Live Site URL: https://mzdemir-results-summary-component.netlify.app/
 
 ### Built with

@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/news-home-with-sass-F1aFC4OSa4
 - Live Site URL: https://mzdemir-news-homepage.netlify.app/
 
 ### Built with

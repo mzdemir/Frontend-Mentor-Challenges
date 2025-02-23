@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Barlow Semi Condensed";
+  color: white;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: hsl(214, 17%, 92%);
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  margin: 1rem;
+  inline-size: min(95%, 70rem);
+  grid-template-areas: "one" "two" "three" "four" "five";
+}
+@media (min-width: 33em) {
+  .testimonial-grid {
+    grid-template-areas: "one one" "two three" "four four" "five five";
+  }
+}
+@media (min-width: 54em) {
+  .testimonial-grid {
+    grid-template-areas: "one four" "two five" "three five";
+  }
+}
+@media (min-width: 75em) {
+  .testimonial-grid {
+    grid-template-areas: "one one two five" "three four four five";
+  }
+}
+
+.testimonial {
+  display: grid;
+  gap: 1rem;
+  font-size: 13px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(217, 19%, 100%);
+}
+.testimonial .profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.testimonial .profile img {
+  display: block;
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid hsl(264, 82%, 80%);
+}
+.testimonial .profile .name {
+  font-size: 13px;
+}
+.testimonial .profile .title {
+  font-size: 13px;
+}
+.testimonial:nth-child(1) {
+  background-color: hsl(263, 55%, 52%);
+  color: white;
+  grid-area: one;
+}
+.testimonial:nth-child(2) {
+  background-color: hsl(217, 19%, 35%);
+  color: white;
+  grid-area: two;
+}
+.testimonial:nth-child(3) {
+  background-color: white;
+  color: hsl(217, 19%, 35%);
+  grid-area: three;
+}
+.testimonial:nth-child(4) {
+  background-color: hsl(219, 29%, 14%);
+  color: white;
+  grid-area: four;
+}
+.testimonial:nth-child(5) {
+  background-color: white;
+  color: hsl(217, 19%, 35%);
+  grid-area: five;
+}
+.testimonial p:first-of-type {
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.testimonial p:last-of-type {
+  opacity: 0.8;
+  line-height: 1.3;
+}/*# sourceMappingURL=style.css.map */
