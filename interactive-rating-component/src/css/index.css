@@ -1,0 +1,93 @@
+.rating-container .submit-btn, .rating-container .rating-form .rating-btn {
+  border: none;
+  font-family: "Overpass";
+  font-size: 1rem;
+  font-weight: 700;
+}
+.rating-container .submit-btn:hover, .rating-container .rating-form .rating-btn:hover {
+  background-color: white;
+  color: hsl(216, 12%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: auto;
+  max-inline-size: 400px;
+  background-color: hsl(216, 12%, 8%);
+  color: white;
+  font-family: "Overpass";
+}
+
+.rating-container {
+  background-color: hsl(213, 19%, 18%);
+  color: "";
+  border-radius: 20px;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+.rating-container img {
+  background-color: hsla(217, 12%, 63%, 0.1);
+  color: "";
+  border-radius: 50%;
+  padding: 1rem;
+  margin-block-end: 1.5rem;
+}
+.rating-container p {
+  color: hsl(217, 12%, 63%);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.rating-container .rating-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating-container .rating-form .rating-btn {
+  background-color: hsla(217, 12%, 63%, 0.1);
+  color: hsl(217, 12%, 63%);
+  border-radius: 50%;
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+.rating-container .rating-form .active {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(216, 12%, 8%);
+}
+.rating-container .submit-btn {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(216, 12%, 8%);
+  border-radius: 25px;
+  padding: 0.75rem;
+  margin-block-start: 0.5rem;
+}
+
+.thanks-container {
+  display: grid;
+  place-items: center;
+  background-color: hsl(213, 19%, 18%);
+  color: "";
+  border-radius: 20px;
+  padding: 2rem;
+  gap: 1rem;
+}
+.thanks-container p:first-of-type {
+  background-color: hsla(217, 12%, 63%, 0.1);
+  color: hsl(25, 97%, 53%);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-block: 1rem;
+}
+.thanks-container p:last-of-type {
+  text-align: center;
+  color: hsl(217, 12%, 63%);
+}/*# sourceMappingURL=index.css.map */

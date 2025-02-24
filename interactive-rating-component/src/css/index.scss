@@ -1,0 +1,101 @@
+$primary-orange: hsl(25, 97%, 53%);
+
+$light-grey: hsl(217, 12%, 63%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+$opacity-bg: hsla(217, 12%, 63%, 0.1);
+
+%btn {
+  border: none;
+  font-family: "Overpass";
+  font-size: 1rem;
+  font-weight: 700;
+
+  &:hover {
+    background-color: white;
+    color: $very-dark-blue;
+  }
+}
+
+@mixin base($bg, $clr, $rad, $pad) {
+  background-color: $bg;
+  color: $clr;
+  border-radius: $rad;
+  padding: $pad;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: auto;
+  max-inline-size: 400px;
+  background-color: $very-dark-blue;
+  color: white;
+  font-family: "Overpass"
+}
+
+.rating-container {
+  @include base($dark-blue, "", 20px, 2rem);
+  display: grid;
+  gap: 1rem;
+
+  img {
+    @include base($opacity-bg, "", 50%, 1rem);
+    margin-block-end: 1.5rem;
+  }
+
+  p {
+    color: $light-grey;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .rating-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rating-btn {
+      @extend %btn;
+      @include base($opacity-bg, $light-grey, 50%, 1rem);
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .active {
+      background-color: $primary-orange;
+      color: $very-dark-blue;
+    }
+  }
+
+  .submit-btn {
+    @extend %btn;
+    @include base($primary-orange, $very-dark-blue, 25px, .75rem);
+    margin-block-start: .5rem;
+  }
+}
+
+.thanks-container {
+  display: grid;
+  place-items: center;
+  @include base($dark-blue, "", 20px, 2rem);
+  gap: 1rem;
+
+  p:first-of-type {
+    @include base($opacity-bg, $primary-orange, 20px, .5rem 1rem);
+    margin-block: 1rem;
+  }
+
+  p:last-of-type {
+    text-align: center;
+    color: $light-grey;
+  }
+}

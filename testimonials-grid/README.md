@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/testimonials-grid-with-sass-e5RyqJhFz6
 - Live Site URL: https://mzdemir-testimonials-grid.netlify.app/
 
 ### Built with
