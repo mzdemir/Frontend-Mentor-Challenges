@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(226, 43%, 10%);
+  font-family: "Rubik";
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-inline-size: 1100px;
+}
+
+#root {
+  display: grid;
+  gap: 1.5rem;
+  padding: 5rem 1.5rem;
+}
+#root .header {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 1rem;
+}
+#root .header .profile {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.75rem;
+}
+#root .header .profile img {
+  display: block;
+  inline-size: 4.375rem;
+  block-size: 4.375rem;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+#root .header .profile h1 {
+  display: grid;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+#root .header .profile h1 span {
+  font-size: 1rem;
+  color: hsl(236, 100%, 87%);
+  font-weight: 400;
+}
+#root .header .time-frame {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.75rem;
+}
+#root .header .time-frame .time-btn {
+  font-family: "Rubik";
+  font-size: 1rem;
+  color: hsl(236, 100%, 87%);
+  background: none;
+  border: none;
+}
+#root .header .time-frame .time-btn:hover, #root .header .time-frame .time-btn:focus-visible {
+  color: white;
+  cursor: pointer;
+}
+#root .header .time-frame .active {
+  color: white;
+}
+#root .report-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#root .report-card .report-icon {
+  display: flex;
+  justify-content: flex-end;
+  padding-inline-end: 1rem;
+  margin-block-start: -10px;
+  margin-block-end: -1.5rem;
+}
+#root .report-card .report-icon img {
+  block-size: 5rem;
+  inline-size: 5rem;
+}
+#root .report-card .report-info {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+#root .report-card .report-info h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#root .report-card .report-info .time-info {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#root .report-card .report-info .time-info span {
+  font-size: 1rem;
+  color: hsl(236, 100%, 87%);
+}
+#root .report-card:nth-child(2) {
+  background-color: hsl(15, 100%, 70%);
+}
+#root .report-card:nth-child(3) {
+  background-color: hsl(195, 74%, 62%);
+}
+#root .report-card:nth-child(4) {
+  background-color: hsl(348, 100%, 68%);
+}
+#root .report-card:nth-child(5) {
+  background-color: hsl(145, 58%, 55%);
+}
+#root .report-card:nth-child(6) {
+  background-color: hsl(264, 64%, 52%);
+}
+#root .report-card:nth-child(7) {
+  background-color: hsl(43, 84%, 65%);
+}
+@media (min-width: 900px) {
+  #root {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #root .header {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+  }
+  #root .header .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 1.5rem;
+  }
+  #root .header .profile h1 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+  }
+  #root .header .profile h1 span {
+    font-size: 1rem;
+  }
+  #root .header .time-frame {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  #root .report-card .report-info {
+    gap: 2rem;
+  }
+  #root .report-card .report-info .time-info {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+  }
+}/*# sourceMappingURL=index.css.map */

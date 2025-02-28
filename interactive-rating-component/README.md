@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-with-react-and-sass-eedBMW_EEf
 - Live Site URL: https://mzdemir-interactive-rating-component.netlify.app/
 
 ### Built with

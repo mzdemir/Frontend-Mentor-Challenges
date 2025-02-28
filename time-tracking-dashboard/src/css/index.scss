@@ -1,0 +1,209 @@
+$primary: (
+  blue: hsl(246, 80%, 60%),
+  work: hsl(15, 100%, 70%),
+  play: hsl(195, 74%, 62%),
+  study: hsl(348, 100%, 68%),
+  exercise: hsl(145, 58%, 55%),
+  social: hsl(264, 64%, 52%),
+  selfcare: hsl(43, 84%, 65%)
+);
+
+$neutral: (
+  dark-blue: hsl(235, 46%, 20%),
+  very-dark-blue: hsl(226, 43%, 10%),
+  desaturated-blue: hsl(235, 45%, 61%),
+  pale-blue: hsl(236, 100%, 87%)
+);
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: map-get($neutral, very-dark-blue);
+  font-family: "Rubik";
+  color: white;
+  font-weight: $fw-light;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-inline-size: 1100px;
+}
+
+#root {
+  display: grid;
+  gap: 1.5rem;
+  padding: 5rem 1.5rem;
+
+  .header {
+    background-color: map-get($neutral, dark-blue);
+    border-radius: 1rem;
+
+    .profile {
+      background-color: map-get($primary, blue);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.75rem;
+
+      img {
+        display: block;
+        inline-size: 4.375rem;
+        block-size: 4.375rem;
+        border: 3px solid white;
+        border-radius: 50%;
+      }
+
+      h1 {
+        display: grid;
+        line-height: 1.5;
+        font-size: 1.5rem;
+        font-weight: $fw-light;
+
+        span {
+          font-size: 1rem;
+          color: map-get($neutral, pale-blue);
+          font-weight: $fw-regular;
+        }
+      }
+    }
+
+    .time-frame {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.75rem;
+
+      .time-btn {
+        font-family: "Rubik";
+        font-size: 1rem;
+        color: map-get($neutral, pale-blue);
+        background: none;
+        border: none;
+
+        &:hover,
+        &:focus-visible {
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      .active {
+        color: white;
+      }
+    }
+  }
+
+  .report-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .report-icon {
+      display: flex;
+      justify-content: flex-end;
+      padding-inline-end: 1rem;
+      margin-block-start: -10px;
+      margin-block-end: -1.5rem;
+
+      img {
+        block-size: 5rem;
+        inline-size: 5rem;
+      }
+    }
+
+    .report-info {
+      background-color: map-get($neutral, dark-blue);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 1rem;
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.125rem;
+        font-weight: $fw-medium;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .time-info {
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 1rem;
+          color: map-get($neutral, pale-blue);
+        }
+      }
+    }
+  }
+
+  $sections: work, play, study, exercise, social, selfcare;
+
+  @for $i from 1 through length($sections) {
+    .report-card:nth-child(#{$i + 1}) {
+      background-color: map-get($primary, nth($sections, $i));
+    }
+  }
+
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    .header {
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      block-size: 100%;
+
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        gap: 1.5rem;
+
+        h1 {
+          font-size: 2.5rem;
+          line-height: 1.25;
+
+          span {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .time-frame {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+    }
+
+    .report-card {
+      .report-info {
+        gap: 2rem;
+
+        .time-info {
+          flex-direction: column;
+          align-items: start;
+          gap: 0.5rem;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
