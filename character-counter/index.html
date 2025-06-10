@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+			rel="stylesheet" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Frontend Mentor | Character counter</title>
+	</head>
+	<body data-dark-mode="false">
+		<div class="wrapper">
+			<header>
+				<div class="logo-container">
+					<img class="logo" src="./images/logo-light-theme.svg" alt="Character counter logo" />
+					<button class="theme-btn" aria-label="Toggle dark mode">
+						<img class="theme-icon" src="./images/icon-moon.svg" alt="a moon icon" />
+					</button>
+				</div>
+				<h1 class="title">Analyze your text in real-time.</h1>
+			</header>
+
+			<main>
+				<form class="form">
+					<label for="text-input" class="sr-only">Enter your text here</label>
+					<textarea
+						id="text-input"
+						class="text-input"
+						name="text-input"
+						placeholder="Start typing here… (or paste your text)"
+						data-exceeded="false"></textarea>
+
+					<div class="hint-text"></div>
+
+					<div class="options-container">
+						<label class="option" aria-label="Exclude spaces from count">
+							<input class="exclude-spaces" type="checkbox" name="exclude-spaces" /> Exclude Spaces
+						</label>
+						<label class="option" aria-label="Set the character limit for textearea">
+							<input type="checkbox" name="has-char-limit" /> Set Character Limit
+							<input type="number" name="char-limit" value="300" />
+						</label>
+						<p class="reading-time">Approx. reading time: <span class="time">0</span> minutes</p>
+					</div>
+				</form>
+
+				<section class="stats-and-density">
+					<div class="stats">
+						<div class="stat total-char">
+							<p class="value char-value" aria-live="polite">00</p>
+							<p class="info">Total Characters</p>
+						</div>
+						<div class="stat word-count">
+							<p class="value word-value" aria-live="polite">00</p>
+							<p class="info">Word Count</p>
+						</div>
+						<div class="stat sentence-count">
+							<p class="value sentence-value" aria-live="polite">00</p>
+							<p class="info">Sentence Count</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="density">
+					<h2 class="density-title">Letter Density</h2>
+					<ol class="density-results">
+						No characters found. Start typing to see letter density.
+					</ol>
+					<button class="see-more-btn" data-see-more="false" aria-expanded="false">See more</button>
+				</section>
+			</main>
+		</div>
+
+		<script type="module" src="index.js"></script>
+	</body>
+</html>

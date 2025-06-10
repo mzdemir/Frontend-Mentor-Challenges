@@ -1,13 +1,13 @@
 $pr-colors: (
 	soft-orange: hsl(35, 77%, 62%),
-	soft-red: hsl(5, 85%, 63%)
+	soft-red: hsl(5, 85%, 63%),
 );
 
 $n-colors: (
 	off-white: hsl(36, 100%, 99%),
 	grayish-blue: hsl(233, 8%, 79%),
 	dark-grayish-blue: hsl(236, 13%, 42%),
-	very-dark-blue: hsl(240, 100%, 5%)
+	very-dark-blue: hsl(240, 100%, 5%),
 );
 
 $fw-regular: 400;
@@ -31,8 +31,6 @@ body {
 		gap: 3.5rem;
 		padding: 5.5rem 10.25rem;
 	}
-
-
 }
 
 .primary-header {
@@ -174,7 +172,7 @@ body {
 
 			&:last-child {
 				border: none;
-				padding-block-end: .25rem;
+				padding-block-end: 0.25rem;
 			}
 		}
 	}
@@ -209,7 +207,7 @@ body {
 			}
 
 			.read-more {
-				padding: .25rem 2rem;
+				padding: 0.25rem 2rem;
 			}
 		}
 
@@ -227,8 +225,6 @@ body {
 		}
 	}
 }
-
-
 
 .trending {
 	display: grid;
