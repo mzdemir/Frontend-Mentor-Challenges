@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/character-counter-app-with-scss-and-js-eqMpU4vr8j
 - Live Site URL: https://mzdemir-character-counter.netlify.app/
 
 ## My process

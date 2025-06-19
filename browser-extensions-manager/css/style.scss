@@ -1,0 +1,368 @@
+$neutral-900: hsl(227, 75%, 14%);
+$neutral-800: hsl(226, 25%, 17%);
+$neutral-700: hsl(225, 23%, 24%);
+$neutral-600: hsl(226, 11%, 37%);
+$neutral-300: hsl(0, 0%, 78%);
+$neutral-200: hsl(217, 61%, 90%);
+$neutral-100: hsl(0, 0%, 93%);
+$neutral-0: hsl(200, 60%, 99%);
+
+$red-400: hsl(3, 86%, 64%);
+$red-500: hsl(3, 71%, 56%);
+$red-700: hsl(3, 77%, 44%);
+
+$light-gradient: linear-gradient(180deg, hsl(215, 74%, 95%) 0%, hsl(185, 48%, 95%) 100%);
+$dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+@mixin text-preset-1 {
+	font-size: 2.125rem;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+
+@mixin text-preset-2($fw: 400) {
+	font-size: 1.25rem;
+	font-weight: $fw;
+	line-height: 1.2;
+	letter-spacing: -0.2px;
+}
+
+@mixin text-preset-3($fw: 400) {
+	font-size: 1rem;
+	font-weight: $fw;
+	line-height: 1.4;
+	letter-spacing: -0.5px;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	display: block;
+}
+
+button {
+	font-family: inherit;
+	color: inherit;
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 2px $neutral-0, 0 0 0 4px $red-400;
+	}
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+	background: $light-gradient;
+	background-repeat: no-repeat;
+	color: $neutral-900;
+}
+
+.wrapper {
+	max-inline-size: 23.4375rem;
+	margin: 0 auto;
+	padding: 1.25rem 1rem 4rem;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0.5rem 0.75rem;
+	background-color: $neutral-0;
+	border-radius: 0.625rem;
+}
+
+.theme-btn {
+	padding: 0.875rem;
+	background-color: $neutral-100;
+	border-radius: 0.75rem;
+	border: none;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $neutral-300;
+	}
+}
+
+.filter-section {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	text-align: center;
+	margin-block: 2.5rem 2rem;
+}
+
+.title {
+	@include text-preset-1();
+}
+
+.filter-btns {
+	display: flex;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+.filter-btn {
+	@include text-preset-2();
+	background-color: $neutral-0;
+	border: 1px solid $neutral-200;
+	padding: 0.5rem 1.25rem 0.625rem;
+	border-radius: 999px;
+	box-shadow: 0 1px 2px 0 hsla(217, 28, 78, 40%);
+
+	&:hover {
+		cursor: pointer;
+		color: $neutral-900;
+		opacity: 70%;
+	}
+}
+
+.active {
+	background-color: $red-700;
+	color: $neutral-0;
+
+	&:hover {
+		cursor: pointer;
+		color: $neutral-0;
+		background-color: $red-500;
+		opacity: 100%;
+	}
+}
+
+.extensions {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.extension-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	block-size: 12.5rem;
+	background-color: $neutral-0;
+	padding: 1.25rem;
+	border: 1px solid $neutral-200;
+	border-radius: 1.25rem;
+	box-shadow: 0 2px 2px 0 $neutral-200, 0 1px 5px 1px $neutral-200;
+}
+
+.extension-info {
+	display: flex;
+	gap: 1rem;
+}
+
+.extension-icon {
+	inline-size: 3.75rem;
+	block-size: 3.75rem;
+}
+
+.extension-details {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.extension-name {
+	@include text-preset-2($fw: 700);
+}
+
+.extension-description {
+	@include text-preset-3($fw: 400);
+	color: $neutral-600;
+}
+
+.extension-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.remove-btn {
+	@include text-preset-3($fw: 500);
+	padding: 0.5rem 1rem;
+	border: 1px solid $neutral-300;
+	border-radius: 999px;
+	background: none;
+
+	&:hover {
+		cursor: pointer;
+		color: $neutral-0;
+		background-color: $red-700;
+	}
+}
+
+label {
+	display: inline-block;
+	line-height: 0;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	inline-size: 2.25rem;
+	block-size: 1.25rem;
+	background-color: $neutral-300;
+	border-radius: 999px;
+	outline: none;
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 2px $neutral-0, 0 0 0 4px $red-400;
+	}
+}
+
+input[type="checkbox"]::before {
+	content: "";
+	inline-size: 1rem;
+	block-size: 1rem;
+	background-color: $neutral-0;
+	border-radius: 999px;
+	position: absolute;
+	inset: 2px;
+}
+
+input[type="checkbox"]:checked {
+	background-color: $red-700;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $red-500;
+	}
+}
+
+input[type="checkbox"]:checked::before {
+	transform: translateX(1rem);
+}
+
+body[data-dark-mode="true"] {
+	background: $dark-gradient;
+	color: $neutral-0;
+
+	button {
+		&:focus-visible {
+			box-shadow: 0 0 0 2px $neutral-800, 0 0 0 4px $red-400;
+			background-color: $neutral-600;
+		}
+	}
+
+	header {
+		background-color: $neutral-800;
+	}
+
+	.theme-btn {
+		background-color: $neutral-700;
+
+		&:hover {
+			background-color: $neutral-600;
+		}
+	}
+
+	.filter-btn {
+		background-color: $neutral-700;
+		color: $neutral-0;
+		border: 1px solid $neutral-600;
+		box-shadow: 0 0 0;
+
+		&:hover {
+			background-color: $neutral-600;
+			opacity: 100%;
+		}
+	}
+
+	.active {
+		background-color: $red-400;
+		color: $neutral-900;
+
+		&:hover,
+		&:focus-visible {
+			background-color: $red-500;
+		}
+	}
+
+	.extension-card {
+		background-color: $neutral-800;
+		border: 1px solid $neutral-600;
+		box-shadow: 0 0 0;
+	}
+
+	.extension-description {
+		color: $neutral-300;
+	}
+
+	.remove-btn {
+		border: 1px solid $neutral-600;
+
+		&:hover {
+			color: $neutral-900;
+			background-color: $red-400;
+		}
+	}
+
+	input[type="checkbox"] {
+		&:hover {
+			background-color: $neutral-600;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 2px $neutral-800, 0 0 0 4px $red-400;
+		}
+	}
+	input[type="checkbox"]:checked {
+		background-color: $red-400;
+
+		&:hover {
+			background-color: $red-500;
+		}
+	}
+}
+
+@media (min-width: 45rem) {
+	.wrapper {
+		max-inline-size: 48rem;
+		padding: 1.5rem 2rem 4rem;
+	}
+
+	header {
+		padding: 0.75rem 1rem;
+	}
+
+	.filter-section {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.extensions {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 73rem) {
+	.wrapper {
+		max-inline-size: 90rem;
+		padding: 2.5rem 8.4375rem 4rem;
+	}
+
+	header {
+		padding: 0.75rem 1rem;
+	}
+
+	.filter-section {
+		margin-block: 4rem 2rem;
+	}
+
+	.extensions {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
