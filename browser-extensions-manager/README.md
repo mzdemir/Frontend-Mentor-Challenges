@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://www.frontendmentor.io/solutions/browser-extensions-manager-nRvOOr3FEL
+- Live Site URL: https://mzdemir0-browser-extensions-manager.netlify.app/
 
 ## My process
 
